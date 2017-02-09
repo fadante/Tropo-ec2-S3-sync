@@ -8,14 +8,12 @@ import boto3
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 
-# Let's use Amazon S3
+# Amazon Credentials
 s3 = boto3.client(
     's3',
-    # Hard coded strings as credentials, but not recommended.
     aws_access_key_id ='YOUR_S3_KEY',
     aws_secret_access_key ='YOUR_S3_SECRET_KEY'
 )
-
 
 @post('/')
 def index(request):
